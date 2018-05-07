@@ -53,7 +53,16 @@ module.exports = {
         pathRewrite: {
             '^/app': ''
         }
-      },      
+      },
+      
+      '/wcwc': {
+        target: 'http://10.172.0.200:28080/wcwc/', 
+        // target: 'http://10.172.4.104:8080/wcwc/', 
+        changeOrigin: true,
+        pathRewrite: {
+            '^/wcwc': ''
+        }
+      },         
     },     
   },
 

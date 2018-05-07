@@ -1,15 +1,14 @@
 import axios from 'axios'
-import { Message } from 'element-ui'
 import Cookies from 'js-cookie'
 // create an axios instance
 const service = axios.create({
   baseURL: process.env.BASE_API, // api的base_url
-  timeout: 5000 // request timeout
+  timeout: 10000 // request timeout
 })
 
 // request interceptor
 service.interceptors.request.use(config => {
-  config.headers['token'] = Cookies.get('token')
+  // config.headers['token'] = Cookies.get('token')
   return config
 }, error => {
   // Do something with request error
@@ -21,12 +20,7 @@ service.interceptors.request.use(config => {
 service.interceptors.response.use(
   // response => response,
   (response) => {
-    let loginHtml = window.location.href
-    if(response.data.code !== 0 && loginHtml.indexOf("/login.html") == -1) {
-      window.location.href = "./login.html"
-    }else{
       return response;
-    }
   },
 
   /**

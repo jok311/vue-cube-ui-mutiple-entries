@@ -1,19 +1,12 @@
 <template>
   <div id="app">
     <a href="./coupon.html" style="font-size: 0.426rem">跳到优惠券页面</a>
-    <br/>
-    <br/>
-    <span style="font-size: 0.426rem;">100元优惠券</span>
-    <div style="padding-top: 100px;">
-      <br/>
-      <div class="test">
-        <!-- <cube-input v-model="value" placeholder="请输入手机号码"></cube-input> -->
+    <div class="img-box"><img src="" alt=""></div>    
+      <div class="user-message-box">
+        <cube-input v-model="value" placeholder="请输入手机号码"></cube-input>
         <br/>
-        <!-- <cube-button :primary="true">领取优惠券</cube-button> -->
+        <cube-button :primary="true">立即领取</cube-button>
       </div>
-      <br/>
-
-    </div>
   </div>
 </template>
 
